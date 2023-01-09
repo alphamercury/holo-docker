@@ -39,7 +39,7 @@ jobs:
     - name: Build Rust toolchain image
       run: |
         cd languages
-        buildx build --platform linux/arm64 -t ghcr.io/alphamercury/holo-toolchain-rust:latest -f ./rust.dockerfile .
+        docker buildx build --platform linux/arm64 -t ghcr.io/alphamercury/holo-toolchain-rust:latest -f ./rust.dockerfile .
 
     - name: Wait for other runs to complete
       uses: softprops/turnstyle@v1
